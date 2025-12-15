@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EMI Calculator</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>💰 EMI Calculator</h2>
+
+        <form method="POST">
+            <input type="number" name="total_amount" placeholder="Total Amount (₹)" required>
+            <input type="number" name="down_payment" placeholder="Down Payment (₹)" required>
+            <input type="number" step="0.1" name="interest_rate" placeholder="Interest Rate (%)" required>
+            <input type="number" name="duration" placeholder="Loan Duration (Years)" required>
+
+            <button type="submit">Calculate EMI</button>
+        </form>
+
+        {% if emi %}
+        <div class="result">
+            <h3>Monthly EMI</h3>
+            <p>₹ {{ emi }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
